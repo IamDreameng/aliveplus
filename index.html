@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feel Good | Elite Health Optimization & Telehealth</title>
+    <title>Alive+ | Elite Health Optimization & Longevity Telehealth</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -66,13 +66,14 @@
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-[#102C57] flex items-center justify-center text-white font-bold text-xs">F</div>
-                <span class="text-xs font-bold tracking-[0.3em] text-[#102C57] uppercase">Feel Good</span>
+                <div class="w-8 h-8 bg-[#102C57] flex items-center justify-center text-white font-bold text-xs">A+</div>
+                <span class="text-xs font-bold tracking-[0.3em] text-[#102C57] uppercase">Alive+</span>
             </div>
             <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                <a href="#about" class="hover:text-[#102C57] transition-colors">About</a>
+                <a href="#upload-section" class="hover:text-[#102C57] transition-colors">Upload Report</a>
                 <a href="#treatments" class="hover:text-[#102C57] transition-colors">Treatments</a>
                 <a href="#smarter" class="hover:text-[#102C57] transition-colors">Start Smarter</a>
-                <a href="#advisor" class="hover:text-[#102C57] transition-colors">Find a Lab</a>
             </div>
             <button onclick="document.getElementById('advisor').scrollIntoView({behavior:'smooth'})" class="bg-[#102C57] text-white text-[9px] font-bold uppercase tracking-widest px-8 py-4 rounded-sm hover:bg-slate-800 transition-all">
                 Talk to our Expert
@@ -81,33 +82,107 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative pt-48 pb-20 bg-white">
+    <section class="relative pt-48 pb-10 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="max-w-3xl">
-                <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-500 mb-6">Asia's Premier Telehealth Hub</p>
+                <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-500 mb-6">Elite Health Optimization</p>
                 <h1 class="text-5xl md:text-7xl font-light tracking-tight text-slate-900 mb-8 leading-[1.1]">
-                    Feel your best, <br>
+                    Engineered Vitality. <br>
                     <span class="font-semibold italic text-[#102C57]">Optimized Anywhere.</span>
                 </h1>
                 <p class="text-lg text-slate-500 font-light leading-relaxed mb-12 max-w-xl">
-                    Feel Good combines clinical AI with elite medicine to unlock your biological potential through remote diagnostics and tailored care. 
+                    Alive+ combines clinical data with elite preventative medicine to unlock structural performance, cellular longevity, and biological symmetry.
                 </p>
-                
-                <!-- Beginner/Pro Choice -->
-                <div class="grid md:grid-cols-2 gap-6 mb-12">
-                    <div class="p-8 border-2 border-slate-100 rounded-2xl hover:border-[#102C57] cursor-pointer transition-all group" onclick="selectPath('Beginner')">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xs font-bold uppercase tracking-widest">The Beginner</h3>
-                            <span class="text-[10px] text-blue-500 font-bold uppercase">Step 01</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Introduction Section -->
+    <section id="about" class="py-20 bg-slate-50 border-t border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-500 mb-4">The Standard</p>
+                    <h2 class="text-3xl md:text-4xl font-light tracking-tight text-slate-900 mb-6">
+                        Biomarker Analytics & <br><span class="font-semibold text-[#102C57]">Metabolic Precision.</span>
+                    </h2>
+                </div>
+                <div class="lg:col-span-7">
+                    <p class="text-slate-600 font-light leading-relaxed mb-6">
+                        Alive+ delivers precise, remote diagnostic protocols built directly from your personal biomarker profile. We bypass generic guesswork to balance cellular health, baseline metabolic biomarkers, systemic inflammation levels, and functional athletic endurance profiles. 
+                    </p>
+                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-200/60">
+                        <div>
+                            <div class="text-2xl font-bold text-[#102C57]">100%</div>
+                            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-1">Data-Driven</div>
                         </div>
-                        <p class="text-xs text-slate-400 font-light leading-relaxed">I want to lose weight, fix my sleep, and regain natural energy.</p>
+                        <div>
+                            <div class="text-2xl font-bold text-[#102C57]">Targeted</div>
+                            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-1">Cellular Care</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-[#102C57]">Secure</div>
+                            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-1">Encrypted Labs</div>
+                        </div>
                     </div>
-                    <div class="p-8 border-2 border-slate-100 rounded-2xl hover:border-[#102C57] cursor-pointer transition-all group" onclick="selectPath('Pro / Athlete')">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-xs font-bold uppercase tracking-widest">The Pro / Athlete</h3>
-                            <span class="text-[10px] text-blue-500 font-bold uppercase">Step 01</span>
-                        </div>
-                        <p class="text-xs text-slate-400 font-light leading-relaxed">Advanced hormone optimization, recovery, and elite performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PDF Report Upload Portal -->
+    <section id="upload-section" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-500 mb-4">Diagnostics Interface</p>
+                <h2 class="text-3xl font-light text-[#102C57]">Submit Your Lab Reports</h2>
+                <p class="text-sm text-slate-400 font-light mt-2">Upload your laboratory testing results or blood panel PDF reports securely. Our system parses targets instantly for expert evaluation.</p>
+            </div>
+
+            <!-- Upload Component Container -->
+            <div class="border-2 border-dashed border-slate-200 rounded-[32px] p-12 bg-slate-50/50 text-center transition-all duration-300 hover:border-[#102C57]" id="drop-zone">
+                <input type="file" id="pdf-file-input" accept=".pdf" class="hidden" onchange="handleFileSelect(event)">
+                
+                <!-- State 1: Empty / Waiting -->
+                <div id="upload-state-initial" class="space-y-6">
+                    <div class="w-16 h-16 bg-white shadow-sm border border-slate-100 rounded-2xl flex items-center justify-center mx-auto text-slate-400 text-xl font-light">
+                        📄
+                    </div>
+                    <div>
+                        <button onclick="document.getElementById('pdf-file-input').click()" class="bg-[#102C57] text-white text-[10px] font-bold uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-slate-800 transition-all shadow-md">
+                            Select Lab PDF Report
+                        </button>
+                        <p class="text-xs text-slate-400 font-light mt-4">or drag and drop your clinical file here</p>
+                    </div>
+                    <p class="text-[9px] text-slate-300 uppercase tracking-widest font-bold">Supported Formats: PDF Only (Max 25MB)</p>
+                </div>
+
+                <!-- State 2: Processing / Loading -->
+                <div id="upload-state-loading" class="hidden space-y-6 py-4">
+                    <div class="w-12 h-12 border-4 border-slate-200 border-t-[#102C57] rounded-full animate-spin mx-auto"></div>
+                    <div>
+                        <p class="text-sm font-semibold text-slate-800" id="loading-filename">Processing Report.pdf...</p>
+                        <p class="text-xs text-slate-400 font-light mt-1">Extracting metabolic biometrics, system markers, and chemical panels...</p>
+                    </div>
+                </div>
+
+                <!-- State 3: Success Confirmation -->
+                <div id="upload-state-success" class="hidden space-y-6 py-2">
+                    <div class="w-16 h-16 bg-green-50 border border-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto text-2xl">
+                        ✓
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-slate-800" id="success-filename">lab_results_2026.pdf</p>
+                        <p class="text-xs text-green-600 font-medium mt-1">Report extracted successfully. Forwarded to Clinical Dashboard.</p>
+                    </div>
+                    <div class="flex gap-4 justify-center pt-2">
+                        <button onclick="resetUploadState()" class="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-slate-600 transition-colors">
+                            Upload Another File
+                        </button>
+                        <span class="text-slate-200">|</span>
+                        <button onclick="document.getElementById('advisor').scrollIntoView({behavior:'smooth'})" class="text-[10px] font-bold uppercase tracking-widest text-blue-500 hover:text-blue-600 transition-colors">
+                            View AI Analysis Transcript →
+                        </button>
                     </div>
                 </div>
             </div>
@@ -117,7 +192,7 @@
     <!-- Start Smarter Section -->
     <section id="smarter" class="py-24 bg-white border-t border-slate-50">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-serif text-[#102C57] text-center mb-16">Start Smarter</h2>
+            <h2 class="text-5xl font-light text-center text-[#102C57] mb-16">Start Smarter</h2>
             
             <div class="grid md:grid-cols-3 gap-8 items-stretch">
                 <!-- Weight Loss Card -->
@@ -150,7 +225,7 @@
                         </div>
                         <div class="text-center">
                             <div class="text-5xl font-bold text-[#102C57]" id="bmi-display">0</div>
-                            <div class="text-[10px] text-slate-400 font-bold uppercase mt-1">Your BMI</div>
+                            <div class="text-[10px] text-slate-400 font-bold uppercase mt-1" id="bmi-category">Your BMI</div>
                         </div>
                     </div>
 
@@ -183,7 +258,7 @@
                         <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-100 text-[9px] font-bold uppercase tracking-widest text-slate-500 mb-6">
                             <span>↗</span> Take the Quiz
                         </div>
-                        <h3 class="text-3xl font-serif text-slate-800 mb-4">Help Me Choose</h3>
+                        <h3 class="text-3xl font-light text-slate-800 mb-4">Help Me Choose</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">Simplify decisions with tailored guidance, comparing therapies and matching care to your needs.</p>
                     </div>
                     <button class="mt-auto w-full py-4 rounded-full border border-slate-200 text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:bg-[#102C57] hover:text-white transition-all">Find All Treatments</button>
@@ -195,7 +270,7 @@
                         <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-100 text-[9px] font-bold uppercase tracking-widest text-slate-500 mb-6">
                             <span>↗</span> What is GLP-1?
                         </div>
-                        <h3 class="text-2xl font-serif text-slate-800 mb-4">Personalized GLP-1</h3>
+                        <h3 class="text-2xl font-light text-slate-800 mb-4">Personalized GLP-1</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">Therapy supports metabolic health by regulating appetite and energy balance to reduce cravings.</p>
                     </div>
                     <button class="mt-auto w-full py-4 rounded-full border border-slate-200 text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:bg-[#102C57] hover:text-white transition-all">Learn More</button>
@@ -207,7 +282,7 @@
                         <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-100 text-[9px] font-bold uppercase tracking-widest text-slate-500 mb-6">
                             <span>↗</span> What is GLP-1/GIP?
                         </div>
-                        <h3 class="text-2xl font-serif text-slate-800 mb-4">Personalized GLP-1/GIP</h3>
+                        <h3 class="text-2xl font-light text-slate-800 mb-4">Personalized GLP-1/GIP</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">Enhances metabolic health by balancing appetite and energy regulation to curb snacking.</p>
                     </div>
                     <button class="mt-auto w-full py-4 rounded-full border border-slate-200 text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:bg-[#102C57] hover:text-white transition-all">Learn More</button>
@@ -219,7 +294,7 @@
                         <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-100 text-[9px] font-bold uppercase tracking-widest text-slate-500 mb-6">
                             <span>↗</span> Wellness Solutions
                         </div>
-                        <h3 class="text-2xl font-serif text-slate-800 mb-4">Wellness</h3>
+                        <h3 class="text-2xl font-light text-slate-800 mb-4">Wellness</h3>
                         <p class="text-sm text-slate-500 font-light leading-relaxed">Boosts vitality with Sermorelin, NAD+, and Glutathione for cellular health optimization.</p>
                     </div>
                     <button class="mt-auto w-full py-4 rounded-full border border-slate-200 text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:bg-[#102C57] hover:text-white transition-all">Learn More</button>
@@ -233,7 +308,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
                 <div>
-                    <h2 class="text-5xl font-serif text-[#102C57] mb-8 leading-tight">Your treatment, <br>delivered with care.</h2>
+                    <h2 class="text-5xl font-light text-[#102C57] mb-8 leading-tight">Your treatment, <br>delivered with care.</h2>
                     <p class="text-lg text-slate-500 font-light leading-relaxed max-w-md">
                         Medications are filled through licensed partner pharmacies and shipped directly to your door in secure, discreet packaging. Global logistics meet clinical precision.
                     </p>
@@ -243,7 +318,7 @@
                         <svg viewBox="0 0 400 300" class="w-full max-w-sm drop-shadow-2xl">
                             <rect x="50" y="50" width="220" height="160" fill="#102C57" rx="10" />
                             <rect x="70" y="70" width="180" height="120" fill="white" rx="5" />
-                            <text x="100" y="140" font-family="Montserrat, sans-serif" font-weight="700" fill="#102C57" font-size="20" letter-spacing="2">FEEL GOOD</text>
+                            <text x="100" y="140" font-family="Montserrat, sans-serif" font-weight="700" fill="#102C57" font-size="20" letter-spacing="2">ALIVE+</text>
                             <circle cx="300" cy="220" r="20" fill="#38BDF8" />
                             <path d="M290 220 L310 220 M300 210 L300 230" stroke="white" stroke-width="3" />
                         </svg>
@@ -293,7 +368,7 @@
                             <div class="flex gap-6 animate-fade">
                                 <div class="w-10 h-10 bg-[#102C57] rounded-full flex-shrink-0 flex items-center justify-center text-xs text-white">A</div>
                                 <div class="text-sm text-slate-600 font-light leading-relaxed bg-slate-50 p-6 rounded-2xl rounded-tl-none">
-                                    Hello! I am your Feel Good advisor. What is your primary health objective today? I can help you find a blood test near you.
+                                    Hello! I am your Alive+ advisor. What is your primary health objective today? You can choose a custom pathway above or upload a recent blood test panel PDF for target analysis.
                                 </div>
                             </div>
                         </div>
@@ -316,14 +391,71 @@
     <footer class="py-24 bg-white border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-[#102C57] flex items-center justify-center text-white font-bold text-xs">F</div>
-                <span class="text-[10px] font-bold tracking-[0.4em] text-[#102C57] uppercase">Feel Good</span>
+                <div class="w-8 h-8 bg-[#102C57] flex items-center justify-center text-white font-bold text-xs">A+</div>
+                <span class="text-[10px] font-bold tracking-[0.4em] text-[#102C57] uppercase">Alive+</span>
             </div>
-            <p class="text-[9px] text-slate-300 uppercase tracking-[0.4em]">© 2026 Telehealth Solutions Global.</p>
+            <p class="text-[9px] text-slate-300 uppercase tracking-[0.4em]">© 2026 Alive+ Telehealth Solutions Global.</p>
         </div>
     </footer>
 
     <script>
+        // PDF Drag and Drop / Select State Management
+        const dropZone = document.getElementById('drop-zone');
+        
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropZone.classList.add('border-[#102C57]', 'bg-slate-100/70');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('border-[#102C57]', 'bg-slate-100/70');
+            }, false);
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            if (files.length) handleFileProcessing(files[0]);
+        });
+
+        function handleFileSelect(event) {
+            const files = event.target.files;
+            if (files.length) handleFileProcessing(files[0]);
+        }
+
+        function handleFileProcessing(file) {
+            if (file.type !== 'application/pdf') {
+                alert('Please submit documents in PDF format only.');
+                return;
+            }
+            
+            // Toggle to loading state
+            document.getElementById('upload-state-initial').classList.add('hidden');
+            document.getElementById('upload-state-loading').classList.remove('hidden');
+            document.getElementById('loading-filename').innerText = `Analyzing ${file.name}...`;
+            
+            // Emulate secure payload extraction timeout
+            setTimeout(() => {
+                document.getElementById('upload-state-loading').classList.add('hidden');
+                document.getElementById('upload-state-success').classList.remove('hidden');
+                document.getElementById('success-filename').innerText = file.name;
+                
+                // Notify the bottom clinical advisor interface
+                addBotMessage(`System Notification: I have safely received and processed your report "${file.name}". Biomarkers have been forwarded to our clinical experts. Let's discuss your targets.`);
+            }, 2500);
+        }
+
+        function resetUploadState() {
+            document.getElementById('upload-state-success').classList.add('hidden');
+            document.getElementById('upload-state-initial').classList.remove('hidden');
+            document.getElementById('pdf-file-input').value = '';
+        }
+
+        // Functional Metrics & Weight Updates
         function calcWeightLoss(val) {
             document.getElementById('lose-val').innerText = Math.round(val * 0.2);
             document.getElementById('current-weight').innerText = `${val} lbs.`;
@@ -340,7 +472,10 @@
                 const roundedBmi = Math.round(bmi * 10) / 10;
                 document.getElementById('bmi-display').innerText = roundedBmi;
                 
-                addBotMessage(`Your BMI is ${roundedBmi}. Our experts recommend a blood panel to verify metabolic health before starting. Should I find a blood test lab near you?`);
+                const category = getBMICategory(roundedBmi);
+                document.getElementById('bmi-category').innerText = category;
+                
+                addBotMessage(`Your BMI calculation returns ${roundedBmi} (${category}). Our medical team recommends analyzing your systemic blood levels before protocol engineering.`);
             }
         }
 
@@ -355,7 +490,7 @@
             document.getElementById('advisor').scrollIntoView({behavior: 'smooth'});
             addUserMessage(`I want to proceed with the ${path} pathway.`);
             setTimeout(() => {
-                addBotMessage(`Excellent choice. To begin the ${path} program, our experts require a comprehensive blood panel. Would you like to find a blood test location near you?`);
+                addBotMessage(`Excellent. To deploy the specialized ${path} longevity track, we look directly at your deep baseline blood panels. You can upload an existing report directly into the portal above.`);
             }, 800);
         }
 
@@ -396,7 +531,7 @@
             input.value = '';
             
             setTimeout(() => {
-                addBotMessage("Understood. I will pass this to our expert clinical team. They will review your goals and provide a lab referral for a blood test near you shortly.");
+                addBotMessage("Understood. Passing updates to the expert clinical assessment team. They will evaluate your targets and contact you shortly with your biological breakdown profile.");
             }, 1000);
         }
 

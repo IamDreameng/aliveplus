@@ -3,80 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alive+ | Professional Medical Care Redefined</title>
+    <title>Alive+ | Elite Health Optimization</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, #102C57 0%, #1e4a8c 100%); }
+        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
+        .view { display: none; }
+        .view.active { display: block; }
     </style>
 </head>
 <body class="antialiased bg-slate-50 text-slate-900">
 
-    <!-- Navigation -->
     <nav class="absolute w-full z-50 p-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
-            <div class="text-2xl font-bold tracking-tighter">Alive+</div>
+            <div class="text-2xl font-bold tracking-tighter cursor-pointer" onclick="showHome()">Alive+</div>
             <button class="p-2 border border-white/20 rounded-lg hover:bg-white/10 transition-all">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-gradient pt-32 pb-48 px-6 text-center text-white relative">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-blue-200 font-medium tracking-widest uppercase text-xs mb-6">Join 50,000+ patients</p>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Absolutely Alive+</h1>
-            <p class="text-xl text-blue-100 font-light mb-8 max-w-2xl mx-auto">
-                Medicine that keeps pace with you. We provide medical care online—simple, direct, and led by licensed providers. No waiting rooms, just care that works.
-            </p>
-        </div>
-
-        <!-- Floating Nav Row (Reference: Screenshot 2026-06-20 at 9.54.49 PM.jpg) -->
-        <div class="absolute -bottom-24 left-6 right-6 lg:left-1/2 lg:-translate-x-1/2 lg:max-w-5xl z-20">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="#longevity" class="bg-white text-slate-900 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center">
-                    <span class="font-semibold mb-2">Longevity</span>
-                    <span class="text-slate-400">→</span>
-                </a>
-                <a href="#recovery" class="bg-white text-slate-900 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center">
-                    <span class="font-semibold mb-2">Injury Recovery</span>
-                    <span class="text-slate-400">→</span>
-                </a>
-                <a href="#men" class="bg-white text-slate-900 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center">
-                    <span class="font-semibold mb-2">Men's Health</span>
-                    <span class="text-slate-400">→</span>
-                </a>
-                <a href="#women" class="bg-white text-slate-900 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center">
-                    <span class="font-semibold mb-2">Women's Health</span>
-                    <span class="text-slate-400">→</span>
-                </a>
+    <div id="home-view" class="view active">
+        <section class="hero-gradient pt-40 pb-56 px-6 text-center text-white relative">
+            <div class="max-w-4xl mx-auto">
+                <p class="text-blue-300 font-medium tracking-widest uppercase text-xs mb-6">Join the community today.</p>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Absolutely Alive+</h1>
+                <p class="text-xl text-blue-100 font-light mb-8 max-w-2xl mx-auto">
+                    Elite health optimization, redefined for real life. We provide support online—simple, direct, and led by licensed providers.
+                </p>
             </div>
-        </div>
-    </section>
 
-    <!-- Spacer for the floating cards -->
-    <div class="h-32"></div>
+            <div class="absolute -bottom-24 left-6 right-6 lg:left-1/2 lg:-translate-x-1/2 lg:max-w-6xl z-20">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <button onclick="showDetail('Longevity')" class="bg-white text-slate-900 p-4 rounded-3xl shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center group">
+                        <img src="https://placehold.co/300x200/1e3a8a/ffffff?text=Longevity" class="w-full h-32 object-cover rounded-2xl mb-4" alt="Longevity">
+                        <span class="font-semibold mb-2">Longevity</span>
+                        <span class="text-slate-400 group-hover:text-blue-600 transition-colors">→</span>
+                    </button>
+                    <button onclick="showDetail('Injury Recovery')" class="bg-white text-slate-900 p-4 rounded-3xl shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center group">
+                        <img src="https://placehold.co/300x200/1e3a8a/ffffff?text=Recovery" class="w-full h-32 object-cover rounded-2xl mb-4" alt="Recovery">
+                        <span class="font-semibold mb-2">Injury Recovery</span>
+                        <span class="text-slate-400 group-hover:text-blue-600 transition-colors">→</span>
+                    </button>
+                    <button onclick="showDetail('Men\'s Health')" class="bg-white text-slate-900 p-4 rounded-3xl shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center group">
+                        <img src="https://placehold.co/300x200/1e3a8a/ffffff?text=Men's+Health" class="w-full h-32 object-cover rounded-2xl mb-4" alt="Men">
+                        <span class="font-semibold mb-2">Men's Health</span>
+                        <span class="text-slate-400 group-hover:text-blue-600 transition-colors">→</span>
+                    </button>
+                    <button onclick="showDetail('Women\'s Health')" class="bg-white text-slate-900 p-4 rounded-3xl shadow-xl hover:shadow-2xl transition-all flex flex-col items-center text-center group">
+                        <img src="https://placehold.co/300x200/1e3a8a/ffffff?text=Women's+Health" class="w-full h-32 object-cover rounded-2xl mb-4" alt="Women">
+                        <span class="font-semibold mb-2">Women's Health</span>
+                        <span class="text-slate-400 group-hover:text-blue-600 transition-colors">→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <div class="h-40"></div>
+    </div>
 
-    <!-- Main Content Sections -->
-    <section class="max-w-7xl mx-auto px-6 py-20 text-center">
-        <h2 class="text-3xl font-bold text-[#102C57] mb-12">Your path to better health starts here.</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm">
-                <h3 class="text-xl font-semibold mb-4">Transparent Care</h3>
-                <p class="text-slate-600">Direct access to clinical providers without the complexity of traditional insurance models.</p>
-            </div>
-            <div class="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm">
-                <h3 class="text-xl font-semibold mb-4">Verified Results</h3>
-                <p class="text-slate-600">Everything we offer is backed by clinical data and vetted by board-certified practitioners.</p>
-            </div>
-            <div class="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm">
-                <h3 class="text-xl font-semibold mb-4">Delivered to You</h3>
-                <p class="text-slate-600">Discreet shipping directly from U.S. pharmacies to your home or office.</p>
-            </div>
-        </div>
-    </section>
+    <div id="detail-view" class="view pt-40 px-6 max-w-4xl mx-auto">
+        <button onclick="showHome()" class="text-blue-600 font-medium mb-8 hover:underline">← Back to Home</button>
+        <h2 id="detail-title" class="text-4xl font-bold text-slate-900 mb-6">Category Detail</h2>
+        <img id="detail-image" src="" class="w-full h-64 object-cover rounded-3xl mb-8" alt="Details">
+        <p id="detail-content" class="text-lg text-slate-600 leading-relaxed">
+            Detailed information about our approach to this specific area of care.
+        </p>
+    </div>
 
+    <script>
+        const details = {
+            'Longevity': {
+                image: 'https://placehold.co/800x400/1e3a8a/ffffff?text=Longevity+Deep+Dive',
+                content: 'Our longevity protocols focus on cellular health and systemic optimization. We leverage cutting-edge data to help you extend your healthspan through personalized wellness routines.'
+            },
+            'Injury Recovery': {
+                image: 'https://placehold.co/800x400/1e3a8a/ffffff?text=Recovery+Support',
+                content: 'Injury recovery requires targeted support. Our providers create custom recovery plans that accelerate tissue repair and help you return to peak performance efficiently.'
+            },
+            'Men\'s Health': {
+                image: 'https://placehold.co/800x400/1e3a8a/ffffff?text=Men\'s+Health+Care',
+                content: 'Comprehensive support designed for men. We prioritize hormone balance, vitality, and proactive wellness to maintain structural and physical excellence.'
+            },
+            'Women\'s Health': {
+                image: 'https://placehold.co/800x400/1e3a8a/ffffff?text=Women\'s+Health+Care',
+                content: 'Empowering women through personalized optimization. Our approach addresses unique metabolic and endocrine needs, ensuring you feel your best at every stage.'
+            }
+        };
+
+        function showDetail(category) {
+            document.getElementById('home-view').classList.remove('active');
+            document.getElementById('detail-view').classList.add('active');
+            
+            document.getElementById('detail-title').innerText = category;
+            document.getElementById('detail-image').src = details[category].image;
+            document.getElementById('detail-content').innerText = details[category].content;
+            window.scrollTo(0, 0);
+        }
+
+        function showHome() {
+            document.getElementById('detail-view').classList.remove('active');
+            document.getElementById('home-view').classList.add('active');
+        }
+    </script>
 </body>
 </html>

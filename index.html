@@ -3,462 +3,477 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alive+ | Elite Health Optimization & Longevity Telehealth</title>
+    <title>Alive+ | Trusted Medical Weight Loss & Longevity</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --brand-navy: #0A192F;
-            --brand-blue: #102C57;
-            --brand-accent: #38BDF8;
+            --brand-primary: #102C57; /* Deep Trust Blue */
+            --brand-secondary: #2563EB; /* Action Blue */
+            --brand-light: #EFF6FF;
         }
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #ffffff;
-            color: #1a1a1a;
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #1E293B;
             scroll-behavior: smooth;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+        /* Clean, D2C Card Shadows matching premium aesthetic */
+        .med-card {
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #F1F5F9;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .treatment-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            transition: all 0.4s ease;
+        .med-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
         }
-        .treatment-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
+        /* Custom Slider */
         input[type="range"] {
             -webkit-appearance: none;
             width: 100%;
-            height: 4px;
-            background: #e2e8f0;
-            border-radius: 5px;
+            height: 8px;
+            background: #E2E8F0;
+            border-radius: 999px;
             outline: none;
         }
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
-            background: var(--brand-blue);
+            width: 32px;
+            height: 32px;
+            background: var(--brand-secondary);
             border-radius: 50%;
             cursor: pointer;
-            border: 2px solid white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.1s;
         }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+        }
+        /* Smooth Fade In */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade {
-            animation: fadeIn 0.4s ease forwards;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased selection:bg-blue-200 selection:text-blue-900">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-[#102C57] flex items-center justify-center text-white font-bold text-xs">A+</div>
-                <span class="text-xs font-bold tracking-[0.3em] text-[#102C57] uppercase">Alive+</span>
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-lg border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <div class="w-10 h-10 bg-[#102C57] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-sm">A+</div>
+                <span class="text-2xl font-bold tracking-tight text-[#102C57]">Alive+</span>
             </div>
-            <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
-                <a href="#about" class="hover:text-[#102C57] transition-colors">About</a>
-                <a href="#upload-section" class="hover:text-[#102C57] transition-colors">Upload Report</a>
-                <a href="#treatments" class="hover:text-[#102C57] transition-colors">Treatments</a>
-                <a href="#smarter" class="hover:text-[#102C57] transition-colors">Start Smarter</a>
+            
+            <!-- Desktop Links -->
+            <div class="hidden md:flex gap-10 text-base font-medium text-slate-600">
+                <a href="#about" class="hover:text-[#2563EB] transition-colors">About</a>
+                <a href="#start-smart" class="hover:text-[#2563EB] transition-colors">Start Smart</a>
+                <a href="#explore" class="hover:text-[#2563EB] transition-colors">Explore</a>
+                <a href="#products" class="hover:text-[#2563EB] transition-colors">Our Products</a>
             </div>
-            <button onclick="document.getElementById('advisor').scrollIntoView({behavior:'smooth'})" class="bg-[#102C57] text-white text-[9px] font-bold uppercase tracking-widest px-8 py-4 rounded-sm hover:bg-slate-800 transition-all">
-                Talk to our Expert
+            
+            <!-- CTA -->
+            <button onclick="document.getElementById('advisor').scrollIntoView({behavior:'smooth'})" class="hidden md:block bg-[#2563EB] text-white text-sm font-semibold px-8 py-3.5 rounded-full hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
+                Get Started
+            </button>
+            
+            <!-- Mobile Menu Icon (Visual Only) -->
+            <button class="md:hidden text-slate-900">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-48 pb-10 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="max-w-3xl">
-                <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-500 mb-6">Elite Health Optimization</p>
-                <h1 class="text-5xl md:text-7xl font-light tracking-tight text-slate-900 mb-8 leading-[1.1]">
-                    Engineered Vitality. <br>
-                    <span class="font-semibold italic text-[#102C57]">Optimized Anywhere.</span>
-                </h1>
-                <p class="text-lg text-slate-500 font-light leading-relaxed mb-12 max-w-xl">
-                    Alive+ combines clinical data with elite preventative medicine to unlock structural performance, cellular longevity, and biological symmetry.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Brand Introduction Section -->
-    <section id="about" class="py-20 bg-slate-50 border-t border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-5">
-                    <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-500 mb-4">The Standard</p>
-                    <h2 class="text-3xl md:text-4xl font-light tracking-tight text-slate-900 mb-6">
-                        Biomarker Analytics & <br><span class="font-semibold text-[#102C57]">Metabolic Precision.</span>
-                    </h2>
-                </div>
-                <div class="lg:col-span-7">
-                    <p class="text-slate-600 font-light leading-relaxed mb-6">
-                        Alive+ delivers precise, remote diagnostic protocols built directly from your personal biomarker profile. We bypass generic guesswork to balance cellular health, baseline metabolic biomarkers, systemic inflammation levels, and functional athletic endurance profiles. 
+    <section class="relative pt-36 pb-24 md:pt-48 md:pb-32 bg-slate-50 overflow-hidden">
+        <!-- Soft background blur -->
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-100/50 rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-100/50 text-blue-700 rounded-full text-sm font-semibold mb-8 animate-fade border border-blue-200/50">
+                        <span class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span>
+                        Accepting New Patients Online
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.1] animate-fade" style="animation-delay: 0.1s;">
+                        Medical weight loss, <br>
+                        <span class="text-[#2563EB]">delivered to you.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 leading-relaxed mb-10 max-w-lg mx-auto md:mx-0 animate-fade" style="animation-delay: 0.2s;">
+                        Access board-certified providers and clinically-proven treatments from the comfort of your home. 100% online, entirely secure.
                     </p>
-                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-200/60">
-                        <div>
-                            <div class="text-2xl font-bold text-[#102C57]">100%</div>
-                            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-1">Data-Driven</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl font-bold text-[#102C57]">Targeted</div>
-                            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-1">Cellular Care</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl font-bold text-[#102C57]">Secure</div>
-                            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-1">Encrypted Labs</div>
-                        </div>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade" style="animation-delay: 0.3s;">
+                        <button onclick="document.getElementById('start-smart').scrollIntoView({behavior:'smooth'})" class="bg-[#102C57] text-white px-10 py-4 rounded-full text-base font-semibold hover:bg-slate-800 transition-all shadow-xl hover:shadow-2xl">
+                            Start Your Journey
+                        </button>
+                        <button onclick="document.getElementById('explore').scrollIntoView({behavior:'smooth'})" class="bg-white border border-slate-200 text-slate-700 px-10 py-4 rounded-full text-base font-semibold hover:border-slate-300 hover:bg-slate-50 transition-all shadow-sm">
+                            Explore Treatments
+                        </button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PDF Report Upload Portal -->
-    <section id="upload-section" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center max-w-xl mx-auto mb-12">
-                <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-500 mb-4">Diagnostics Interface</p>
-                <h2 class="text-3xl font-light text-[#102C57]">Submit Your Lab Reports</h2>
-                <p class="text-sm text-slate-400 font-light mt-2">Upload your laboratory testing results or blood panel PDF reports securely. Our system parses targets instantly for expert evaluation.</p>
-            </div>
-
-            <!-- Upload Component Container -->
-            <div class="border-2 border-dashed border-slate-200 rounded-[32px] p-12 bg-slate-50/50 text-center transition-all duration-300 hover:border-[#102C57]" id="drop-zone">
-                <input type="file" id="pdf-file-input" accept=".pdf" class="hidden" onchange="handleFileSelect(event)">
                 
-                <!-- State 1: Empty / Waiting -->
-                <div id="upload-state-initial" class="space-y-6">
-                    <div class="w-16 h-16 bg-white shadow-sm border border-slate-100 rounded-2xl flex items-center justify-center mx-auto text-slate-400 text-xl font-light">
-                        📄
-                    </div>
-                    <div>
-                        <button onclick="document.getElementById('pdf-file-input').click()" class="bg-[#102C57] text-white text-[10px] font-bold uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-slate-800 transition-all shadow-md">
-                            Select Lab PDF Report
-                        </button>
-                        <p class="text-xs text-slate-400 font-light mt-4">or drag and drop your clinical file here</p>
-                    </div>
-                    <p class="text-[9px] text-slate-300 uppercase tracking-widest font-bold">Supported Formats: PDF Only (Max 25MB)</p>
-                </div>
-
-                <!-- State 2: Processing / Loading -->
-                <div id="upload-state-loading" class="hidden space-y-6 py-4">
-                    <div class="w-12 h-12 border-4 border-slate-200 border-t-[#102C57] rounded-full animate-spin mx-auto"></div>
-                    <div>
-                        <p class="text-sm font-semibold text-slate-800" id="loading-filename">Processing Report.pdf...</p>
-                        <p class="text-xs text-slate-400 font-light mt-1">Extracting metabolic biometrics, system markers, and chemical panels...</p>
-                    </div>
-                </div>
-
-                <!-- State 3: Success Confirmation -->
-                <div id="upload-state-success" class="hidden space-y-6 py-2">
-                    <div class="w-16 h-16 bg-green-50 border border-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto text-2xl">
-                        ✓
-                    </div>
-                    <div>
-                        <p class="text-sm font-semibold text-slate-800" id="success-filename">lab_results_2026.pdf</p>
-                        <p class="text-xs text-green-600 font-medium mt-1">Report extracted successfully. Forwarded to Clinical Dashboard.</p>
-                    </div>
-                    <div class="flex gap-4 justify-center pt-2">
-                        <button onclick="resetUploadState()" class="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-slate-600 transition-colors">
-                            Upload Another File
-                        </button>
-                        <span class="text-slate-200">|</span>
-                        <button onclick="document.getElementById('advisor').scrollIntoView({behavior:'smooth'})" class="text-[10px] font-bold uppercase tracking-widest text-blue-500 hover:text-blue-600 transition-colors">
-                            View AI Analysis Transcript →
-                        </button>
+                <!-- Hero Image Area -->
+                <div class="relative hidden md:block animate-fade" style="animation-delay: 0.4s;">
+                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&q=80&w=800" alt="Medical Professional" class="relative z-10 w-full h-[600px] object-cover rounded-[40px] shadow-2xl">
+                    
+                    <!-- Floating trust badge -->
+                    <div class="absolute -bottom-8 -left-8 bg-white p-6 rounded-3xl shadow-xl z-20 flex items-center gap-5 border border-slate-100">
+                        <div class="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center text-green-600 text-2xl">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-base font-bold text-slate-900">U.S. Licensed</p>
+                            <p class="text-sm text-slate-500 font-medium">Board-Certified Doctors</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Start Smarter Section -->
-    <section id="smarter" class="py-24 bg-white border-t border-slate-50">
+    <div class="bg-white border-b border-slate-200 py-8">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-light text-center text-[#102C57] mb-16">Start Smarter</h2>
+            <div class="flex flex-wrap justify-center md:justify-between items-center gap-8 text-slate-600">
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    <span class="text-sm font-semibold uppercase tracking-wider">HIPAA Compliant</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    <span class="text-sm font-semibold uppercase tracking-wider">Partnered 503A Pharmacies</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    <span class="text-sm font-semibold uppercase tracking-wider">Provider Supervised</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-sm font-semibold uppercase tracking-wider">Discreet Shipping</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">How Alive+ Works</h2>
+                <p class="text-slate-600 text-xl leading-relaxed">A simple, transparent path to better health, managed entirely online by licensed medical professionals.</p>
+            </div>
             
-            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+            <div class="grid md:grid-cols-3 gap-12 relative">
+                <!-- Connective Line (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-slate-100 z-0"></div>
+
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center text-3xl shadow-sm text-[#2563EB] mb-8 font-bold border-4 border-white transition-transform duration-300">
+                        1
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Online Intake</h3>
+                    <p class="text-slate-500 text-base leading-relaxed px-4">Complete a secure medical questionnaire and establish your health baseline in minutes.</p>
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 bg-[#102C57] rounded-full flex items-center justify-center text-3xl shadow-md text-white mb-8 font-bold border-4 border-white transition-transform duration-300">
+                        2
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Provider Review</h3>
+                    <p class="text-slate-500 text-base leading-relaxed px-4">A licensed clinician reviews your file, determines eligibility, and creates a personalized prescription plan.</p>
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center text-3xl shadow-sm text-[#2563EB] mb-8 font-bold border-4 border-white transition-transform duration-300">
+                        3
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Delivered to You</h3>
+                    <p class="text-slate-500 text-base leading-relaxed px-4">If approved, your medication is shipped directly to your door with ongoing clinical support available 24/7.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="start-smart" class="py-24 bg-[#F8FAFC]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Start Smart</h2>
+                <p class="text-slate-600 text-xl">Use our clinical tools to establish your baseline before consulting.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10 items-stretch">
                 <!-- Weight Loss Card -->
-                <div class="bg-slate-50 rounded-[40px] p-10 flex flex-col items-center text-center">
-                    <h3 class="text-sm font-bold text-slate-900 mb-10 uppercase tracking-widest">Est. Weight Loss (20%)</h3>
-                    <div class="text-7xl font-bold text-slate-900 mb-2" id="lose-val">30</div>
-                    <div class="text-sm text-slate-500 mb-12">lbs.</div>
+                <div class="med-card p-12 flex flex-col items-center text-center">
+                    <div class="bg-blue-50 text-[#2563EB] px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider mb-10">
+                        Weight Loss Estimator
+                    </div>
+                    <div class="text-8xl font-bold text-[#102C57] tracking-tight mb-2" id="lose-val">30</div>
+                    <div class="text-slate-500 font-semibold text-lg mb-4">Estimated Lbs Lost*</div>
+                    <p class="text-sm text-slate-400 mb-12">*Based on average 20% clinical trial results.</p>
                     
-                    <div class="w-full px-4 mb-8">
-                        <div class="flex justify-between text-[10px] text-slate-400 uppercase font-bold mb-4">
-                            <span>100 lbs.</span>
-                            <span>400 lbs.</span>
+                    <div class="w-full px-4 mt-auto">
+                        <div class="flex justify-between text-sm text-slate-500 font-bold mb-6">
+                            <span>100 lbs</span>
+                            <span>400 lbs</span>
                         </div>
                         <input type="range" min="100" max="400" value="150" oninput="calcWeightLoss(this.value)">
-                        <div class="mt-4 text-xs font-bold text-[#102C57]" id="current-weight">150 lbs.</div>
+                        <div class="mt-10 text-lg font-bold text-[#102C57] bg-blue-50 inline-block px-8 py-3 rounded-full border border-blue-100 shadow-sm" id="current-weight">Current Weight: 150 lbs</div>
                     </div>
-                </div>
-
-                <!-- Image Card -->
-                <div class="rounded-[40px] overflow-hidden bg-[#E2E8F0] h-[450px] md:h-auto">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800" alt="Wellness" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                 </div>
 
                 <!-- BMI Check Card -->
-                <div class="bg-slate-50 rounded-[40px] p-10">
-                    <div class="flex justify-between items-start mb-8">
+                <div class="med-card p-12 flex flex-col">
+                    <div class="flex justify-between items-start mb-10">
                         <div>
-                            <h3 class="text-lg font-bold text-slate-900">Check your BMI</h3>
-                            <p class="text-xs text-slate-400 mt-1">Metrics to calculate risk.</p>
+                            <h3 class="text-2xl font-bold text-slate-900">Calculate BMI</h3>
+                            <p class="text-base text-slate-500 mt-2">Required for prescription eligibility.</p>
                         </div>
-                        <div class="text-center">
-                            <div class="text-5xl font-bold text-[#102C57]" id="bmi-display">0</div>
-                            <div class="text-[10px] text-slate-400 font-bold uppercase mt-1" id="bmi-category">Your BMI</div>
+                        <div class="text-center bg-slate-50 px-8 py-4 rounded-3xl border border-slate-100">
+                            <div class="text-4xl font-bold text-[#2563EB]" id="bmi-display">--</div>
+                            <div class="text-xs text-slate-500 font-bold uppercase mt-2 tracking-wider" id="bmi-category">Result</div>
                         </div>
                     </div>
 
-                    <div class="space-y-6">
+                    <div class="space-y-6 mt-auto">
                         <div>
-                            <label class="text-[10px] font-bold uppercase text-slate-500 block mb-3">Height</label>
+                            <label class="text-sm font-bold uppercase tracking-wider text-slate-600 block mb-3">Height</label>
                             <div class="flex gap-4">
-                                <input type="number" id="ft" placeholder="Feet" class="w-full p-4 rounded-xl bg-white border border-slate-100 text-sm focus:border-[#102C57] outline-none transition-colors">
-                                <input type="number" id="in" placeholder="Inch" class="w-full p-4 rounded-xl bg-white border border-slate-100 text-sm focus:border-[#102C57] outline-none transition-colors">
+                                <input type="number" min="0" id="ft" placeholder="Feet" class="w-full p-5 rounded-2xl bg-white border border-slate-200 text-lg focus:border-[#2563EB] focus:ring-2 focus:ring-blue-100 outline-none transition-all shadow-sm">
+                                <input type="number" min="0" max="11" id="in" placeholder="Inches" class="w-full p-5 rounded-2xl bg-white border border-slate-200 text-lg focus:border-[#2563EB] focus:ring-2 focus:ring-blue-100 outline-none transition-all shadow-sm">
                             </div>
                         </div>
                         <div>
-                            <label class="text-[10px] font-bold uppercase text-slate-500 block mb-3">Weight (lbs)</label>
-                            <input type="number" id="lbs" placeholder="Your Weight" class="w-full p-4 rounded-xl bg-white border border-slate-100 text-sm focus:border-[#102C57] outline-none transition-colors">
+                            <label class="text-sm font-bold uppercase tracking-wider text-slate-600 block mb-3">Weight (Lbs)</label>
+                            <input type="number" min="0" id="lbs" placeholder="e.g. 180" class="w-full p-5 rounded-2xl bg-white border border-slate-200 text-lg focus:border-[#2563EB] focus:ring-2 focus:ring-blue-100 outline-none transition-all shadow-sm">
                         </div>
-                        <button onclick="calculateBMI()" class="w-full py-5 bg-[#102C57] text-white rounded-full text-xs font-bold uppercase tracking-widest mt-4 hover:bg-slate-800 transition-all">Calculate BMI</button>
+                        <button type="button" onclick="calculateBMI()" class="w-full py-5 bg-[#102C57] text-white rounded-2xl text-lg font-semibold mt-4 hover:bg-slate-800 transition-all shadow-md hover:shadow-lg">Calculate Eligibility</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Treatments Section -->
-    <section id="treatments" class="py-32 bg-[#FDFCFB] relative">
+    <section id="explore" class="py-24 bg-white border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-6">
-                <!-- Card 1 -->
-                <div class="treatment-card p-10 flex flex-col h-full">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Explore Pathways</h2>
+                <p class="text-slate-600 text-xl">Targeted clinical programs designed for your specific biology.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pathway 1 -->
+                <div class="med-card p-10 flex flex-col h-full hover:border-[#2563EB] transition-colors group">
                     <div class="mb-8">
-                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-100 text-[9px] font-bold uppercase tracking-widest text-slate-500 mb-6">
-                            <span>↗</span> Take the Quiz
+                        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-[#2563EB] mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                         </div>
-                        <h3 class="text-3xl font-light text-slate-800 mb-4">Help Me Choose</h3>
-                        <p class="text-sm text-slate-500 font-light leading-relaxed">Simplify decisions with tailored guidance, comparing therapies and matching care to your needs.</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">GLP-1 Weight Loss</h3>
+                        <p class="text-base text-slate-600 leading-relaxed">Clinically proven medications like Semaglutide that target the root biological causes of weight gain by regulating appetite.</p>
                     </div>
-                    <button class="mt-auto w-full py-4 rounded-full border border-slate-200 text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:bg-[#102C57] hover:text-white transition-all">Find All Treatments</button>
+                    <button type="button" onclick="selectPath('GLP-1 Weight Loss')" class="mt-auto w-full py-4 rounded-full bg-slate-50 text-base font-semibold text-slate-700 hover:bg-[#102C57] hover:text-white transition-all">Explore Program</button>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="treatment-card p-10 bg-gradient-to-b from-[#D4C3B5]/20 to-transparent flex flex-col h-full border border-white">
+                <!-- Pathway 2 -->
+                <div class="med-card p-10 flex flex-col h-full hover:border-[#2563EB] transition-colors group">
                     <div class="mb-8">
-                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-100 text-[9px] font-bold uppercase tracking-widest text-slate-500 mb-6">
-                            <span>↗</span> What is GLP-1?
+                        <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                         </div>
-                        <h3 class="text-2xl font-light text-slate-800 mb-4">Personalized GLP-1</h3>
-                        <p class="text-sm text-slate-500 font-light leading-relaxed">Therapy supports metabolic health by regulating appetite and energy balance to reduce cravings.</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Dual-Action Therapy</h3>
+                        <p class="text-base text-slate-600 leading-relaxed">Next-generation therapies offering enhanced metabolic control and blood sugar regulation for maximum efficacy.</p>
                     </div>
-                    <button class="mt-auto w-full py-4 rounded-full border border-slate-200 text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:bg-[#102C57] hover:text-white transition-all">Learn More</button>
+                    <button type="button" onclick="selectPath('Dual-Action Therapy')" class="mt-auto w-full py-4 rounded-full bg-slate-50 text-base font-semibold text-slate-700 hover:bg-[#102C57] hover:text-white transition-all">Explore Program</button>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="treatment-card p-10 bg-gradient-to-b from-[#8C7B6C]/20 to-transparent flex flex-col h-full border border-white">
+                <!-- Pathway 3 -->
+                <div class="med-card p-10 flex flex-col h-full hover:border-[#2563EB] transition-colors group">
                     <div class="mb-8">
-                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-100 text-[9px] font-bold uppercase tracking-widest text-slate-500 mb-6">
-                            <span>↗</span> What is GLP-1/GIP?
+                        <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                         </div>
-                        <h3 class="text-2xl font-light text-slate-800 mb-4">Personalized GLP-1/GIP</h3>
-                        <p class="text-sm text-slate-500 font-light leading-relaxed">Enhances metabolic health by balancing appetite and energy regulation to curb snacking.</p>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Longevity & Vitality</h3>
+                        <p class="text-base text-slate-600 leading-relaxed">Advance your cellular health with NAD+, Glutathione, and Peptide therapies designed to improve energy and recovery.</p>
                     </div>
-                    <button class="mt-auto w-full py-4 rounded-full border border-slate-200 text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:bg-[#102C57] hover:text-white transition-all">Learn More</button>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="treatment-card p-10 flex flex-col h-full border border-white">
-                    <div class="mb-8">
-                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-100 text-[9px] font-bold uppercase tracking-widest text-slate-500 mb-6">
-                            <span>↗</span> Wellness Solutions
-                        </div>
-                        <h3 class="text-2xl font-light text-slate-800 mb-4">Wellness</h3>
-                        <p class="text-sm text-slate-500 font-light leading-relaxed">Boosts vitality with Sermorelin, NAD+, and Glutathione for cellular health optimization.</p>
-                    </div>
-                    <button class="mt-auto w-full py-4 rounded-full border border-slate-200 text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:bg-[#102C57] hover:text-white transition-all">Learn More</button>
+                    <button type="button" onclick="selectPath('Longevity & Vitality')" class="mt-auto w-full py-4 rounded-full bg-slate-50 text-base font-semibold text-slate-700 hover:bg-[#102C57] hover:text-white transition-all">Explore Program</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Delivery Section -->
-    <section class="py-32 bg-white">
+    <section id="products" class="py-24 bg-slate-50 border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div>
-                    <h2 class="text-5xl font-light text-[#102C57] mb-8 leading-tight">Your treatment, <br>delivered with care.</h2>
-                    <p class="text-lg text-slate-500 font-light leading-relaxed max-w-md">
-                        Medications are filled through licensed partner pharmacies and shipped directly to your door in secure, discreet packaging. Global logistics meet clinical precision.
-                    </p>
-                </div>
-                <div class="relative">
-                    <div class="bg-slate-50 rounded-3xl p-12 flex items-center justify-center border border-slate-100 shadow-inner">
-                        <svg viewBox="0 0 400 300" class="w-full max-w-sm drop-shadow-2xl">
-                            <rect x="50" y="50" width="220" height="160" fill="#102C57" rx="10" />
-                            <rect x="70" y="70" width="180" height="120" fill="white" rx="5" />
-                            <text x="100" y="140" font-family="Montserrat, sans-serif" font-weight="700" fill="#102C57" font-size="20" letter-spacing="2">ALIVE+</text>
-                            <circle cx="300" cy="220" r="20" fill="#38BDF8" />
-                            <path d="M290 220 L310 220 M300 210 L300 230" stroke="white" stroke-width="3" />
-                        </svg>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">Our Products</h2>
+                <p class="text-slate-600 text-xl">Premium, compounded medications from vetted U.S. pharmacies.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="med-card overflow-hidden bg-white flex flex-col group">
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="inline-block bg-blue-50 text-[#2563EB] text-xs font-bold px-3 py-1 rounded-full mb-4 w-max">GLP-1 Medication</div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-2">Semaglutide</h3>
+                        <p class="text-sm text-slate-500 mb-6 h-10">Same active ingredient as Wegovy® and Ozempic®.</p>
+                        
+                        <ul class="space-y-3 mb-8 text-base text-slate-700 font-medium bg-slate-50 p-6 rounded-2xl">
+                            <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-white text-[#2563EB] flex items-center justify-center text-sm shadow-sm">✓</span> Once-weekly injection</li>
+                            <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-white text-[#2563EB] flex items-center justify-center text-sm shadow-sm">✓</span> Suppresses appetite</li>
+                            <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-white text-[#2563EB] flex items-center justify-center text-sm shadow-sm">✓</span> Regulates blood sugar</li>
+                        </ul>
+                        <div class="mt-auto pt-2 flex items-center justify-between">
+                            <div>
+                                <div class="text-xs text-slate-400 font-semibold uppercase mb-1">Starting At</div>
+                                <div class="text-3xl font-bold text-slate-900">$199<span class="text-sm text-slate-400 font-normal">/mo</span></div>
+                            </div>
+                            <button onclick="selectPath('Semaglutide')" class="bg-[#102C57] text-white px-8 py-4 rounded-full text-sm font-semibold hover:bg-[#2563EB] transition-colors shadow-md">Start</button>
+                        </div>
                     </div>
-                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-50">
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Status</p>
-                        <p class="text-xs font-bold text-green-500 uppercase">● Shipping Worldwide</p>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="med-card overflow-hidden bg-white flex flex-col group relative">
+                    <!-- Popular Tag -->
+                    <div class="absolute top-6 right-6 bg-[#2563EB] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Most Popular</div>
+                    
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="inline-block bg-indigo-50 text-indigo-600 text-xs font-bold px-3 py-1 rounded-full mb-4 w-max">GLP-1/GIP Medication</div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-2">Tirzepatide</h3>
+                        <p class="text-sm text-slate-500 mb-6 h-10">Same active ingredient as Mounjaro® and Zepbound®.</p>
+                        
+                        <ul class="space-y-3 mb-8 text-base text-slate-700 font-medium bg-slate-50 p-6 rounded-2xl">
+                            <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-white text-[#2563EB] flex items-center justify-center text-sm shadow-sm">✓</span> Dual-action receptor</li>
+                            <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-white text-[#2563EB] flex items-center justify-center text-sm shadow-sm">✓</span> Maximum efficacy</li>
+                            <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-white text-[#2563EB] flex items-center justify-center text-sm shadow-sm">✓</span> Reduced cravings</li>
+                        </ul>
+                        <div class="mt-auto pt-2 flex items-center justify-between">
+                            <div>
+                                <div class="text-xs text-slate-400 font-semibold uppercase mb-1">Starting At</div>
+                                <div class="text-3xl font-bold text-slate-900">$299<span class="text-sm text-slate-400 font-normal">/mo</span></div>
+                            </div>
+                            <button onclick="selectPath('Tirzepatide')" class="bg-[#102C57] text-white px-8 py-4 rounded-full text-sm font-semibold hover:bg-[#2563EB] transition-colors shadow-md">Start</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="med-card overflow-hidden bg-white flex flex-col group">
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="inline-block bg-emerald-50 text-emerald-600 text-xs font-bold px-3 py-1 rounded-full mb-4 w-max">Longevity & Energy</div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-2">NAD+ Therapy</h3>
+                        <p class="text-sm text-slate-500 mb-6 h-10">Pure Nicotinamide Adenine Dinucleotide injections.</p>
+                        
+                        <ul class="space-y-3 mb-8 text-base text-slate-700 font-medium bg-slate-50 p-6 rounded-2xl">
+                            <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-white text-[#2563EB] flex items-center justify-center text-sm shadow-sm">✓</span> Boosts mental clarity</li>
+                            <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-white text-[#2563EB] flex items-center justify-center text-sm shadow-sm">✓</span> Deep cellular repair</li>
+                            <li class="flex items-center gap-3"><span class="w-6 h-6 rounded-full bg-white text-[#2563EB] flex items-center justify-center text-sm shadow-sm">✓</span> Increases energy levels</li>
+                        </ul>
+                        <div class="mt-auto pt-2 flex items-center justify-between">
+                            <div>
+                                <div class="text-xs text-slate-400 font-semibold uppercase mb-1">Starting At</div>
+                                <div class="text-3xl font-bold text-slate-900">$149<span class="text-sm text-slate-400 font-normal">/mo</span></div>
+                            </div>
+                            <button onclick="selectPath('NAD+')" class="bg-[#102C57] text-white px-8 py-4 rounded-full text-sm font-semibold hover:bg-[#2563EB] transition-colors shadow-md">Start</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AI Advisor Section -->
-    <section id="advisor" class="py-32 bg-[#102C57] text-white relative overflow-hidden">
-        <div class="max-w-5xl mx-auto px-6 relative z-10">
-            <div class="grid lg:grid-cols-5 gap-20 items-center">
-                <div class="lg:col-span-2">
-                    <p class="text-[10px] font-bold uppercase tracking-[0.5em] text-blue-400 mb-6">Next Steps</p>
-                    <h2 class="text-4xl font-light mb-8">Digital Clinical Advisor</h2>
-                    <p class="text-blue-100/60 font-light leading-relaxed mb-10">
-                        Our platform connects you with partner labs for blood testing near you. Speak with our experts and receive your preliminary biological receipt.
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-400/30">
-                            <span class="text-blue-400 font-bold">A</span>
+    <section id="advisor" class="py-24 bg-[#102C57] text-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Start Your Consultation</h2>
+                <p class="text-blue-200 text-xl">Connect securely with our clinical intake team.</p>
+            </div>
+            
+            <div class="bg-white rounded-[32px] overflow-hidden shadow-2xl flex flex-col h-[700px] text-slate-900 max-w-4xl mx-auto border border-blue-900/50">
+                <!-- Chat Header -->
+                <div class="px-8 py-6 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+                    <div class="flex items-center gap-5">
+                        <div class="relative">
+                            <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-[#2563EB] font-bold text-xl shadow-inner">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                            </div>
+                            <div class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
                         </div>
                         <div>
-                            <p class="text-xs font-bold uppercase tracking-widest">Axiom V2.6 AI</p>
-                            <p class="text-[10px] text-blue-400 uppercase tracking-widest">Network Active</p>
+                            <h4 class="font-bold text-lg text-slate-900">Medical Care Team</h4>
+                            <p class="text-sm text-slate-500 font-medium">Digital Intake Concierge</p>
+                        </div>
+                    </div>
+                    
+                    <!-- File Upload -->
+                    <button onclick="document.getElementById('pdf-file-input').click()" class="flex items-center gap-2 text-sm font-semibold text-[#2563EB] bg-blue-50 px-6 py-3 rounded-full hover:bg-blue-100 transition-colors border border-blue-100 shadow-sm">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                        Upload Labs
+                    </button>
+                    <input type="file" id="pdf-file-input" accept=".pdf" class="hidden" onchange="handleFileSelect(event)">
+                </div>
+                
+                <!-- Chat Messages Area -->
+                <div id="chat-content" class="flex-1 overflow-y-auto p-8 space-y-8 bg-white hide-scrollbar scroll-smooth">
+                    <div class="flex gap-4 items-end animate-fade">
+                        <div class="w-10 h-10 bg-[#102C57] rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold shadow-sm">A+</div>
+                        <div class="bg-slate-100 text-slate-800 p-5 rounded-3xl rounded-bl-sm text-base max-w-[80%] border border-slate-200/50">
+                            Welcome to Alive+. I am the secure intake concierge for our medical team. All information shared here is strictly confidential and HIPAA-compliant.
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-end animate-fade" style="animation-delay: 0.5s;">
+                        <div class="w-10 h-10 bg-[#102C57] rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold shadow-sm">A+</div>
+                        <div class="bg-slate-100 text-slate-800 p-5 rounded-3xl rounded-bl-sm text-base max-w-[80%] border border-slate-200/50">
+                            To get started, what is your primary health goal today? You can choose a pathway above, or upload recent blood work using the button at the top right.
                         </div>
                     </div>
                 </div>
                 
-                <div class="lg:col-span-3">
-                    <div class="glass-card rounded-[40px] overflow-hidden h-[550px] flex flex-col border-none shadow-2xl">
-                        <div class="px-8 py-6 border-b border-slate-200 bg-white/95 flex justify-between items-center">
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-[#102C57]">Expert Intake</span>
-                            <div class="flex gap-1">
-                                <div class="w-2 h-2 rounded-full bg-slate-200"></div>
-                                <div class="w-2 h-2 rounded-full bg-slate-200"></div>
-                                <div class="w-2 h-2 rounded-full bg-[#102C57]"></div>
-                            </div>
-                        </div>
-                        
-                        <div id="chat-content" class="flex-1 overflow-y-auto p-10 space-y-8 bg-white/80">
-                            <div class="flex gap-6 animate-fade">
-                                <div class="w-10 h-10 bg-[#102C57] rounded-full flex-shrink-0 flex items-center justify-center text-xs text-white">A</div>
-                                <div class="text-sm text-slate-600 font-light leading-relaxed bg-slate-50 p-6 rounded-2xl rounded-tl-none">
-                                    Hello! I am your Alive+ advisor. What is your primary health objective today? You can choose a custom pathway above or upload a recent blood test panel PDF for target analysis.
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="p-8 bg-white border-t border-slate-100">
-                            <div class="flex gap-6 items-center">
-                                <input id="chat-input" type="text" placeholder="Type your response..." class="flex-1 text-sm font-light outline-none bg-slate-50 p-4 rounded-xl text-slate-900" onkeypress="if(event.key==='Enter') sendMessage()">
-                                <button onclick="sendMessage()" class="w-12 h-12 bg-[#102C57] flex items-center justify-center rounded-xl hover:bg-blue-600 transition-colors">
-                                    <svg viewBox="0 0 24 24" class="w-5 h-5 fill-white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-                                </button>
-                            </div>
-                        </div>
+                <!-- Chat Input Area -->
+                <div class="p-6 border-t border-slate-100 bg-slate-50">
+                    <div class="relative flex items-center">
+                        <input id="chat-input" type="text" placeholder="Type your message securely..." class="w-full bg-white border border-slate-200 rounded-full py-4 px-6 pr-16 text-base focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-blue-100 shadow-sm" onkeypress="if(event.key==='Enter') sendMessage()">
+                        <button onclick="sendMessage()" class="absolute right-2 w-10 h-10 bg-[#2563EB] rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors shadow-md">
+                            <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                        </button>
                     </div>
+                    <p class="text-xs text-center text-slate-400 mt-4 flex items-center justify-center gap-2 font-medium">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        Protected by 256-bit encryption. Do not use for medical emergencies.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-24 bg-white border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
+    <footer class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-[#102C57] flex items-center justify-center text-white font-bold text-xs">A+</div>
-                <span class="text-[10px] font-bold tracking-[0.4em] text-[#102C57] uppercase">Alive+</span>
+                <div class="w-8 h-8 bg-[#102C57] rounded-full flex items-center justify-center text-white font-bold text-sm">A+</div>
+                <span class="text-xl font-bold tracking-tight text-[#102C57]">Alive+</span>
             </div>
-            <p class="text-[9px] text-slate-300 uppercase tracking-[0.4em]">© 2026 Alive+ Telehealth Solutions Global.</p>
+            <div class="flex gap-8 text-sm font-semibold text-slate-500">
+                <a href="#" class="hover:text-[#2563EB] transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-[#2563EB] transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-[#2563EB] transition-colors">Medical Disclaimer</a>
+            </div>
+            <p class="text-sm text-slate-400 font-medium">© 2026 Alive+ Telehealth. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // PDF Drag and Drop / Select State Management
-        const dropZone = document.getElementById('drop-zone');
-        
-        ['dragenter', 'dragover'].forEach(eventName => {
-            dropZone.addEventListener(eventName, (e) => {
-                e.preventDefault();
-                dropZone.classList.add('border-[#102C57]', 'bg-slate-100/70');
-            }, false);
-        });
-
-        ['dragleave', 'drop'].forEach(eventName => {
-            dropZone.addEventListener(eventName, (e) => {
-                e.preventDefault();
-                dropZone.classList.remove('border-[#102C57]', 'bg-slate-100/70');
-            }, false);
-        });
-
-        dropZone.addEventListener('drop', (e) => {
-            const dt = e.dataTransfer;
-            const files = dt.files;
-            if (files.length) handleFileProcessing(files[0]);
-        });
-
-        function handleFileSelect(event) {
-            const files = event.target.files;
-            if (files.length) handleFileProcessing(files[0]);
-        }
-
-        function handleFileProcessing(file) {
-            if (file.type !== 'application/pdf') {
-                alert('Please submit documents in PDF format only.');
-                return;
-            }
-            
-            // Toggle to loading state
-            document.getElementById('upload-state-initial').classList.add('hidden');
-            document.getElementById('upload-state-loading').classList.remove('hidden');
-            document.getElementById('loading-filename').innerText = `Analyzing ${file.name}...`;
-            
-            // Emulate secure payload extraction timeout
-            setTimeout(() => {
-                document.getElementById('upload-state-loading').classList.add('hidden');
-                document.getElementById('upload-state-success').classList.remove('hidden');
-                document.getElementById('success-filename').innerText = file.name;
-                
-                // Notify the bottom clinical advisor interface
-                addBotMessage(`System Notification: I have safely received and processed your report "${file.name}". Biomarkers have been forwarded to our clinical experts. Let's discuss your targets.`);
-            }, 2500);
-        }
-
-        function resetUploadState() {
-            document.getElementById('upload-state-success').classList.add('hidden');
-            document.getElementById('upload-state-initial').classList.remove('hidden');
-            document.getElementById('pdf-file-input').value = '';
-        }
-
-        // Functional Metrics & Weight Updates
+        // Start Smart Metrics Logic
         function calcWeightLoss(val) {
-            document.getElementById('lose-val').innerText = Math.round(val * 0.2);
-            document.getElementById('current-weight').innerText = `${val} lbs.`;
+            document.getElementById('lose-val').innerText = Math.round(val * 0.2); // 20% average
+            document.getElementById('current-weight').innerText = `Current Weight: ${val} lbs`;
         }
 
         function calculateBMI() {
@@ -470,12 +485,17 @@
                 const totalInches = (ft * 12) + inch;
                 const bmi = (lbs / (totalInches * totalInches)) * 703;
                 const roundedBmi = Math.round(bmi * 10) / 10;
-                document.getElementById('bmi-display').innerText = roundedBmi;
+                document.getElementById('bmi-display').innerText = roundedBmi.toFixed(1);
                 
                 const category = getBMICategory(roundedBmi);
                 document.getElementById('bmi-category').innerText = category;
                 
-                addBotMessage(`Your BMI calculation returns ${roundedBmi} (${category}). Our medical team recommends analyzing your systemic blood levels before protocol engineering.`);
+                document.getElementById('advisor').scrollIntoView({behavior: 'smooth'});
+                addBotMessage(`I see you calculated your BMI as ${roundedBmi} (${category}). To ensure safety and proper prescribing, a clinician will review this along with your full health history. Would you like to start the intake form?`);
+            } else {
+                // UI message instead of alert
+                document.getElementById('bmi-display').innerText = "--";
+                document.getElementById('bmi-category').innerText = "Enter details";
             }
         }
 
@@ -483,24 +503,42 @@
             if (bmi < 18.5) return "Underweight";
             if (bmi < 25) return "Healthy Weight";
             if (bmi < 30) return "Overweight";
-            return "Obese";
+            return "Eligible"; 
         }
 
+        // Chat & File Upload Logic
         function selectPath(path) {
             document.getElementById('advisor').scrollIntoView({behavior: 'smooth'});
-            addUserMessage(`I want to proceed with the ${path} pathway.`);
+            addUserMessage(`I am interested in starting the ${path} program.`);
+            
             setTimeout(() => {
-                addBotMessage(`Excellent. To deploy the specialized ${path} longevity track, we look directly at your deep baseline blood panels. You can upload an existing report directly into the portal above.`);
+                addBotMessage(`Great choice. The ${path} program requires a brief medical evaluation. Before we connect you with a physician, we need to gather some basic medical history. Are you ready to proceed?`);
             }, 800);
+        }
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            if (file.type !== 'application/pdf') {
+                // Inline message to chat instead of alert
+                addBotMessage("System notice: Please submit documents in PDF format for security reasons.");
+                return;
+            }
+            
+            addUserMessage(`[Uploaded Document: ${file.name}]`);
+            
+            setTimeout(() => {
+                addBotMessage("Thank you. Your lab report has been securely encrypted and attached to your file. A provider will review these specific markers during your consultation.");
+            }, 1500);
         }
 
         function addUserMessage(text) {
             const chat = document.getElementById('chat-content');
             const msg = document.createElement('div');
-            msg.className = "flex gap-6 flex-row-reverse animate-fade";
+            msg.className = "flex gap-4 items-end flex-row-reverse animate-fade";
             msg.innerHTML = `
-                <div class="w-10 h-10 bg-slate-100 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] text-slate-400 font-bold border border-slate-200">U</div>
-                <div class="bg-[#102C57] text-white p-6 rounded-2xl rounded-tr-none text-sm font-light shadow-lg">
+                <div class="bg-[#102C57] text-white p-5 rounded-3xl rounded-br-sm text-base max-w-[80%] shadow-sm">
                     ${text}
                 </div>
             `;
@@ -511,10 +549,10 @@
         function addBotMessage(text) {
             const chat = document.getElementById('chat-content');
             const msg = document.createElement('div');
-            msg.className = "flex gap-6 animate-fade";
+            msg.className = "flex gap-4 items-end animate-fade";
             msg.innerHTML = `
-                <div class="w-10 h-10 bg-[#102C57] rounded-full flex-shrink-0 flex items-center justify-center text-xs text-white">A</div>
-                <div class="text-sm text-slate-600 font-light leading-relaxed bg-slate-50 p-6 rounded-2xl rounded-tl-none border border-slate-100">
+                <div class="w-10 h-10 bg-[#102C57] rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold shadow-sm">A+</div>
+                <div class="bg-slate-100 text-slate-800 p-5 rounded-3xl rounded-bl-sm text-base max-w-[80%] border border-slate-200/50">
                     ${text}
                 </div>
             `;
@@ -531,12 +569,12 @@
             input.value = '';
             
             setTimeout(() => {
-                addBotMessage("Understood. Passing updates to the expert clinical assessment team. They will evaluate your targets and contact you shortly with your biological breakdown profile.");
+                addBotMessage("Noted. I am preparing your secure intake file. I will generate a link for you to verify your identity and finalize your medical profile for the doctor momentarily.");
             }, 1000);
         }
 
         window.onload = () => {
-            calcWeightLoss(150);
+            calcWeightLoss(150); // Initialize slider value
         };
     </script>
 </body>

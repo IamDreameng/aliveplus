@@ -8,7 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .hero-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
+        .hero-bg { 
+            background-image: url('https://photos.fife.usercontent.google.com/pw/AP1GczOKuRC5X3gK62FwZ-ZsvLZ72o_17GgHi8IrsjtsBmUWQ6oY9sfjoYUKfA=w2974-h1508-s-no-gm?authuser=0');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9));
+        }
         .view { display: none; }
         .view.active { display: block; }
     </style>
@@ -25,8 +33,9 @@
     </nav>
 
     <div id="home-view" class="view active">
-        <section class="hero-gradient pt-40 pb-56 px-6 text-center text-white relative">
-            <div class="max-w-4xl mx-auto">
+        <section class="hero-bg pt-40 pb-56 px-6 text-center text-white relative">
+            <div class="absolute inset-0 hero-overlay"></div>
+            <div class="max-w-4xl mx-auto relative z-10">
                 <p class="text-blue-300 font-medium tracking-widest uppercase text-xs mb-6">Join the community today.</p>
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Absolutely Alive+</h1>
                 <p class="text-xl text-blue-100 font-light mb-8 max-w-2xl mx-auto">
